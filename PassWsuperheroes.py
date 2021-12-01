@@ -1,6 +1,10 @@
 import random
 
 def SHpassword():
+    # Customize the password
+    length = int(input('How long would you like the terms to be? Please enter a number: '))
+    special = input('Do you want special characters? (y/n): ')
+
     characters = ['batman', 'Batman', 'Superman', 'supes', 'manofsteel', 'wonderwoman' 'princessDiana', 'DianaPrince' 'PrincessDiana', 'Greenlantern', 'greenlantern', 'flash', 'fastestmanalive','speedforce', 'wallyBarry', 'redlightning', 'darkknight', 'GL', 'WW', 'darkSeid', 'DarkSeid', 'DS', 'nightwing', 'Nightwing', 'RedRobin', 'RR', 'R3dR0bin', 'Robin', 'BoyWonder', 'Damien', 'Superboy', 'JonathanKent', 'superboy', 'ConnorKent', 'LexLuthor', 'l3x', 'L3x', 'Luthor', 'Joker', 'ClownPrinceofCrime', 'cl0wnpr!nceofCrim3', 'BB', 'BlueBeetle', 'Aquaman', 'aquaman', 'JasonTodd', 'RedHood', 'orphan', 'Orphan', 'redhood', 'batgirl', 'oracle', 'Oracle', 'Batgirl', 'Spiderman', 'Spidey', 'Webhead', 'spidey', 'Thor', 'CaptainAmerica', 'RasAlGhul', 'EbenezerDarrk', 'TheWrath', 'Azarael', 'Riddler', 'bane', 'Bane', 'riddler']
 
     settings = ['Gotham', 'Metropolis', 'Themyscira', 'goth@m', 'm3trop0lis', 'Apokolips', 'aPokolips', '@pok0l!pS', 'Atlantis', 'Bludhaven', 'starCity', 'StarCity', 'NewGenesis', 'BatCave', 'CrimeAlley', 'LexCorp', 'IcebergLounge', 'SanctumSanctorum', 'BaxterBuilding', 'AvengersTower', 'WayneManor', 'WayneTower', 'FortressofSolitude']
@@ -11,18 +15,19 @@ def SHpassword():
     d = random.randint(0,9)
 
 
-    charRandom = random.choice(characters)
+    charRandom = random.choice(characters)[:length//2]
     charList = [charRandom.lower(), charRandom.title(), charRandom]
           
-    setRandom = random.choice(settings)
+    setRandom = random.choice(settings)[:length//2]
     setList = [setRandom.lower(), setRandom.title(), setRandom]
 
     extra = ['!', '?', '$', '#', '%', '&', '*']
 
     print('Generating password:')
     if special == 'y':
-        password = random.choice(extra) + random.choice(charList[:length/2]) + random.choice(setList[:length/2]) + str(a) + str(b) + str(c) + str(d) + random.choice(extra)
+        password = random.choice(extra) + random.choice(charList) + random.choice(setList) + str(a) + str(b) + str(c) + str(d) + random.choice(extra)
     elif special == 'n':
-        password = random.choice(charList[:length/2]) + random.choice(setList[:length/2]) + str(a) + str(b) + str(c) + str(d)
+        password = random.choice(charList) + random.choice(setList) + str(a) + str(b) + str(c) + str(d)
     print('Password:', password)
+
 
