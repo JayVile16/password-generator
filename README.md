@@ -1,1 +1,1 @@
-# password-generator
+This is a personal project/tool that I use to create passwords. It takes terms from various different sources such as comics, anime/manga etc. I will continue to improve it overtime. I plan to give it a designated site and apply in that way.
