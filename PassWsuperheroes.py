@@ -20,6 +20,9 @@ def SHpassword():
     extra = ['!', '?', '$', '#', '%', '&', '*']
 
     print('Generating password:')
-    password = random.choice(extra) + random.choice(charList) + random.choice(setList) + str(a) + str(b) + str(c) + str(d) + random.choice(extra)
+    if special == 'y':
+        password = random.choice(extra) + random.choice(charList[:length/2]) + random.choice(setList[:length/2]) + str(a) + str(b) + str(c) + str(d) + random.choice(extra)
+    elif special == 'n':
+        password = random.choice(charList[:length/2]) + random.choice(setList[:length/2]) + str(a) + str(b) + str(c) + str(d)
     print('Password:', password)
 
