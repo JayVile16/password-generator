@@ -14,9 +14,12 @@ def SHpassword():
     c = random.randint(0,9)
     d = random.randint(0,9)
 
-
-    charRandom = random.choice(characters)[:length//2]
-    charList = [charRandom.lower(), charRandom.title(), charRandom]
+    if length % 2 == 1:
+        charRandom = random.choice(characters)[:(length//2)+1]
+        charList = [charRandom.lower(), charRandom.title(), charRandom]
+    else:
+        charRandom = random.choice(characters)[:length//2]
+        charList = [charRandom.lower(), charRandom.title(), charRandom]
           
     setRandom = random.choice(settings)[:length//2]
     setList = [setRandom.lower(), setRandom.title(), setRandom]
